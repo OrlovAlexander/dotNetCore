@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEmployeeDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EmployeeDTO>
+    <id>6</id>
+    <name>Крылов</name>
+    <firstName>Алексей</firstName>
+    <patronymic>Михайлович</patronymic>
+    <salaryType>Salary</salaryType>
+    <pay>80000</pay>
+    <monthPayAvg>0</monthPayAvg>
+  </EmployeeDTO>
+</ArrayOfEmployeeDTO>

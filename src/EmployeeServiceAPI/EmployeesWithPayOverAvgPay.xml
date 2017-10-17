@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmployeeDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>6</id>
+  <name>Крылов</name>
+  <firstName>Алексей</firstName>
+  <patronymic>Михайлович</patronymic>
+  <salaryType>Salary</salaryType>
+  <pay>80000</pay>
+</EmployeeDTO><?xml version="1.0" encoding="utf-8"?>
+<EmployeeDTO xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <id>7</id>
+  <name>Антонов</name>
+  <firstName>Александр</firstName>
+  <patronymic>Андреевич</patronymic>
+  <salaryType>Salary</salaryType>
+  <pay>40000</pay>
+</EmployeeDTO>
