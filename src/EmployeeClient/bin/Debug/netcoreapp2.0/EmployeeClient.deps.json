@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "a57167a91e6f2e0d92b3a3dc1dbf26349ba10a7f"
+    "signature": "647f60143d217d0ddb5b142a336cc59da1ed44e3"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,10 +9,19 @@
       "EmployeeClient/1.0.0": {
         "dependencies": {
           "Model": "1.0.0",
-          "Newtonsoft.Json": "10.0.3"
+          "Newtonsoft.Json": "10.0.3",
+          "Autofac": "4.6.2"
         },
         "runtime": {
           "EmployeeClient.dll": {}
+        }
+      },
+      "Autofac/4.6.2": {
+        "dependencies": {
+          "System.ComponentModel": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Autofac.dll": {}
         }
       },
       "Microsoft.CSharp/4.3.0": {
@@ -400,6 +409,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Autofac/4.6.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wKI7F6+n45gqfq0T8FuB3hFzaCkuegiFo5in6uB1y2Ai9ZYcjue8yqk3yzyNEwBDS7AyvlTUGSoNovwpUuKqTw==",
+      "path": "autofac/4.6.2",
+      "hashPath": "autofac.4.6.2.nupkg.sha512"
     },
     "Microsoft.CSharp/4.3.0": {
       "type": "package",

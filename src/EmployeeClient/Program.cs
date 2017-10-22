@@ -20,48 +20,57 @@ namespace EmployeeClient
 
         static void Main(string[] args)
         {
-            WriteLine("Client app, wait for service");
-            try
-            {
-                ReadLine();
-                //ReadAllEmployees().Wait();
-                AddEmployee(new EmployeeDTO { id = 0,
-                        name = "Павлов", firstName = "Николай", patronymic = "Игоревич",
-                        salaryType = EmployeeSalaryType.HourlyPay,
-                        pay = 320.0
-                    }).Wait();
-                AddEmployee(new EmployeeDTO { id = 0,
-                        name = "Крылов", firstName = "Алексей", patronymic = "Михайлович",
-                        salaryType = EmployeeSalaryType.Salary,
-                        pay = 80000.0
-                    }).Wait();
-                AddEmployee(new EmployeeDTO { id = 0,
-                        name = "Антонов", firstName = "Александр", patronymic = "Андреевич",
-                        salaryType = EmployeeSalaryType.Salary,
-                        pay = 40000.0
-                    }).Wait();
-                AddEmployee(new EmployeeDTO { id = 0,
-                        name = "Бабин", firstName = "Антон", patronymic = "Викторович",
-                        salaryType = EmployeeSalaryType.HourlyPay,
-                        pay = 300.5
-                    }).Wait();
-                AddEmployee(new EmployeeDTO { id = 0,
-                        name = "Кашин", firstName = "Влидимир", patronymic = "Александрович",
-                        salaryType = EmployeeSalaryType.HourlyPay,
-                        pay = 320.0
-                    }).Wait();
-                ReadEmployeeByFIO("Антонов", "Александр", "Андреевич").Wait();
-                ReadEmployeeByFIO("Проснин", "Виктор", "Юрьевич").Wait();
-                ReadAllEmployees().Wait();
-                GetSummPayAllEmployes().Wait();
+            Presentation.Common.IApplicationController controller = new Presentation.Common.ApplicationController(new UI.AutofacAdapter());
+            controller.RegisterService<Model.IRouters, Infrastructure.RoutersImpl>()
+            .RegisterView<Presentation.Views.IMainView, UI.MainView>()
+            .RegisterService<Presentation.Common.IPresenter, Presentation.Presenters.MainPresenter>();
+
+            controller.Run<Presentation.Presenters.MainPresenter>();
 
 
-            }
-            catch (Exception ex)
-            {
-                WriteLine(ex.Message);
-            }
-            ReadLine();
+
+            // WriteLine("Client app, wait for service");
+            // try
+            // {
+            //     ReadLine();
+            //     //ReadAllEmployees().Wait();
+            //     AddEmployee(new EmployeeDTO { id = 0,
+            //             name = "Павлов", firstName = "Николай", patronymic = "Игоревич",
+            //             salaryType = EmployeeSalaryType.HourlyPay,
+            //             pay = 320.0
+            //         }).Wait();
+            //     AddEmployee(new EmployeeDTO { id = 0,
+            //             name = "Крылов", firstName = "Алексей", patronymic = "Михайлович",
+            //             salaryType = EmployeeSalaryType.Salary,
+            //             pay = 80000.0
+            //         }).Wait();
+            //     AddEmployee(new EmployeeDTO { id = 0,
+            //             name = "Антонов", firstName = "Александр", patronymic = "Андреевич",
+            //             salaryType = EmployeeSalaryType.Salary,
+            //             pay = 40000.0
+            //         }).Wait();
+            //     AddEmployee(new EmployeeDTO { id = 0,
+            //             name = "Бабин", firstName = "Антон", patronymic = "Викторович",
+            //             salaryType = EmployeeSalaryType.HourlyPay,
+            //             pay = 300.5
+            //         }).Wait();
+            //     AddEmployee(new EmployeeDTO { id = 0,
+            //             name = "Кашин", firstName = "Влидимир", patronymic = "Александрович",
+            //             salaryType = EmployeeSalaryType.HourlyPay,
+            //             pay = 320.0
+            //         }).Wait();
+            //     ReadEmployeeByFIO("Антонов", "Александр", "Андреевич").Wait();
+            //     ReadEmployeeByFIO("Проснин", "Виктор", "Юрьевич").Wait();
+            //     ReadAllEmployees().Wait();
+            //     GetSummPayAllEmployes().Wait();
+
+
+            // }
+            // catch (Exception ex)
+            // {
+            //     WriteLine(ex.Message);
+            // }
+            // ReadLine();
         }
 
         private static async Task ReadAllEmployees()
